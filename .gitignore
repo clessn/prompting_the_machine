@@ -188,3 +188,6 @@ _privatefolder*
 .Ruserdata
 .Rproj
 /.quarto/
+
+# Python   
+.env
