@@ -196,7 +196,7 @@ for (model_name in models) {
 # - iteration number.
 
     if (i %% save_interval == 0) {
-      saveRDS(data_mps, paste0("_SharedFolder_article_vaa_llm_bias/data/data_mps_checkpoint_", i, ".rds"))
+      saveRDS(data_mps, paste0("_SharedFolder_article_vaa_llm_bias/data/backups/data_mps_checkpoint_", i, ".rds"))
       cat("Data saved at iteration", i, "\n")
     }
   }
