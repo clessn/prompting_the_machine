@@ -10,7 +10,8 @@ df_prompts <- readRDS("_SharedFolder_article_vaa_llm_bias/data/data_article_vaa_
     grepl("gpt_35", char_id) ~ "gpt_35",
     grepl("gpt_4_c", char_id) ~ "gpt_4",
     grepl("gpt_4_0125", char_id) ~ "gpt_4turbo"
-  ))
+  ),
+  doc_id = 1:nrow(.))
 
 # Text Wrangling and Cleaning ---------------------------------------------------------------
 
@@ -133,11 +134,42 @@ to_excel_to_create_dictionary <- df_combined_freqs[df_combined_freqs$freq > 100 
 
 writexl::write_xlsx(to_excel_to_create_dictionary, "_SharedFolder_article_vaa_llm_bias/data/dictionaries/dict.xlsx")
 
-
 # Load dictionary ---------------------------------------------------------
 
+dict_excel <- readxl::read_excel("_SharedFolder_article_vaa_llm_bias/data/dictionaries/dict_manual.xlsx") %>% 
+  tidyr::drop_na() %>% 
+  select(-freq)
 
+dict_list <- list()
+for (c in unique(dict_excel$category)) {
+  dict_list[[c]] <- dict_excel$word[dict_excel$category == c]
+}
+
+dict <- quanteda::dictionary(as.list(dict_list))
 
 # Apply dictionary --------------------------------------------------------
+
+dict_results <- clessnverse::run_dictionary(data = df_prompts,
+                                            text = df_prompts$clean_text,
+                                            dict = dict) %>% 
+  mutate(doc_id = 1:nrow(.))
+names(dict_results)[-1] <- paste0("category_", names(dict_results)[-1])
+
+dict_results_long <- dict_results %>% 
+  tidyr::pivot_longer(., cols = starts_with("category"),
+                      names_to = "category",
+                      names_prefix = "category_",
+                      values_to = "issue_used_by_model") %>% 
+  mutate(issue_used_by_model = ifelse(issue_used_by_model >= 1, 1, 0))
+
+### trim df_prompts to get relevant macrodata about the doc_ids in dict_results_long
+df_macro <- df_prompts %>% 
+  select(mp_id, name, level, province,
+         party, riding_id, riding_name,
+         gender, gpt_model, doc_id, clean_text)
+
+
+### Join them together
+df_final <- inner_join(x = df_macro, y = dict_results_long, by = "doc_id")
 
 
