@@ -172,4 +172,4 @@ df_macro <- df_prompts %>%
 ### Join them together
 df_final <- inner_join(x = df_macro, y = dict_results_long, by = "doc_id")
 
-
+saveRDS(df_final, "_SharedFolder_article_vaa_llm_bias/data/data_after_dict_analysis.rds")
