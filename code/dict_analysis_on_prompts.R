@@ -43,6 +43,11 @@ df_prompts$clean_text <- clean_text(df_prompts$char, stopwords = stopwords)
 
 # Explo of word frequencies --------------------------------------------------------------------
 
+nb_words_by_characteristics <- df_prompts %>%
+  tidytext::unnest_tokens(., word, clean_text) %>% 
+  group_by(doc_id) %>% 
+  summarise(n = n())
+
 word_frequencies <- df_prompts %>%
   tidytext::unnest_tokens(., word, clean_text) %>%
   group_by(word) %>% 
