@@ -1,6 +1,6 @@
 # - Load the data
 
-data_mps <- readRDS("_SharedFolder_article_vaa_llm_bias/data/data_mps.rds")
+data_mps <- readRDS("data/data_prompting_the_machine.rds")
 
 # - Vector of models you want to prompt. The script will loop through each model
 # - and prompt it with the same message. It will also create a new column for
@@ -169,7 +169,7 @@ for (model_name in models) {
         }
 
       } else {
-        message(paste("Invalid or missing", prompt_subject, "field for row:"), i, "on attempt", attempts + 1, "using model", model_name)
+        message(paste("Invalid or missing", prompt_subject, "field for row:", i, "on attempt", attempts + 1, "using model", model_name))
         attempts <- attempts + 1
         
         if (attempts < number_of_trials) {
@@ -196,7 +196,7 @@ for (model_name in models) {
 # - iteration number.
 
     if (i %% save_interval == 0) {
-      saveRDS(data_mps, paste0("_SharedFolder_article_vaa_llm_bias/data/backups/data_mps_checkpoint_", i, ".rds"))
+      saveRDS(data_mps, paste0("data/backups/data_prompting_the_machine_checkpoint_", i, ".rds"))
       cat("Data saved at iteration", i, "\n")
     }
   }
@@ -204,4 +204,4 @@ for (model_name in models) {
 
 # - Save the updated dataframe
 
-saveRDS(data_mps, "_SharedFolder_article_vaa_llm_bias/data/data_mps_updated.rds")
+saveRDS(data_mps, "data/data_prompting_the_machine.rds")
