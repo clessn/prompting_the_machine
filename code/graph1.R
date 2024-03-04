@@ -3,7 +3,7 @@ library(dplyr)
 library(ggplot2)
 
 # Data --------------------------------------------------------------------
-data <- readRDS("_SharedFolder_article_vaa_llm_bias/data/data_after_dict_analysis.rds")
+data <- readRDS("data/data_after_dict_analysis.rds")
 
 
 # Wrangling ---------------------------------------------------------------
@@ -85,5 +85,5 @@ df_n_chars_by_mp %>%
                                         linewidth = 0.2),
         axis.title.x = element_text(hjust = 0.5))
 
-ggsave("_SharedFolder_article_vaa_llm_bias/graphs/graph1.png",
+ggsave("graphs/graph1.png",
        width = 12, height = 9)

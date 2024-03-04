@@ -3,7 +3,7 @@ library(dplyr)
 library(ggplot2)
 
 # Data --------------------------------------------------------------------
-data <- readRDS("_SharedFolder_article_vaa_llm_bias/data/data_after_dict_analysis.rds")
+data <- readRDS("data/data_after_dict_analysis.rds")
 
 # Wrangling ---------------------------------------------------------------
 
@@ -76,7 +76,7 @@ df_prop_party %>%
                               "BQ" = "BQ",
                               "NPD" = "NDP"),
                    breaks = c("PLC", "PCC", "BQ", "NPD"))
-ggsave("_SharedFolder_article_vaa_llm_bias/graphs/graph2_fed.png",
+ggsave("graphs/graph2_fed.png",
        width = 10, height = 6.5)
 
 # Prov --------------------------------------------------------------------
@@ -89,6 +89,6 @@ df_prop_party %>%
                               "PLQ" = "QLP",
                               "PQ" = "PQ",
                               "QS" = "QS"))
-ggsave("_SharedFolder_article_vaa_llm_bias/graphs/graph2_prov.png",
+ggsave("graphs/graph2_prov.png",
        width = 10, height = 6.5)
 

@@ -5,7 +5,7 @@ library(dplyr)
 library(ggplot2)
 
 # Data --------------------------------------------------------------------
-data <- readRDS("_SharedFolder_article_vaa_llm_bias/data/data_after_dict_analysis.rds")
+data <- readRDS("data/data_after_dict_analysis.rds")
 
 category_names <- c("culture" = "Culture", 
                     "democracy" = "Democracy", 
@@ -36,5 +36,5 @@ data %>%
                                    hjust = 1, vjust = 0.5),
         axis.title.y = element_text(hjust = 0.5, size = 15))
 
-ggsave("_SharedFolder_article_vaa_llm_bias/graphs/graph0.png",
+ggsave("data/graphs/graph0.png",
        width = 10, height = 6.5)  

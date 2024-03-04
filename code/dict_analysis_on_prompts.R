@@ -2,7 +2,7 @@
 library(dplyr)
 
 # Data --------------------------------------------------------------------
-df_prompts <- readRDS("_SharedFolder_article_vaa_llm_bias/data/data_article_vaa_llm_bias.rds") %>% 
+df_prompts <- readRDS("data/data_article_vaa_llm_bias.rds") %>% 
   tidyr::pivot_longer(., cols = starts_with("gpt"),
                       names_to = "char_id",
                       values_to = "char") %>% 
@@ -137,11 +137,11 @@ to_excel_to_create_dictionary <- df_combined_freqs[df_combined_freqs$freq > 100 
                                                           "accessibility", "change")),] %>% 
   arrange(-freq)
 
-writexl::write_xlsx(to_excel_to_create_dictionary, "_SharedFolder_article_vaa_llm_bias/data/dictionaries/dict.xlsx")
+writexl::write_xlsx(to_excel_to_create_dictionary, "data/dictionaries/dict.xlsx")
 
 # Load dictionary ---------------------------------------------------------
 
-dict_excel <- readxl::read_excel("_SharedFolder_article_vaa_llm_bias/data/dictionaries/dict_manual.xlsx") %>% 
+dict_excel <- readxl::read_excel("data/dictionaries/dict_manual.xlsx") %>% 
   tidyr::drop_na() %>% 
   select(-freq)
 
@@ -177,4 +177,4 @@ df_macro <- df_prompts %>%
 ### Join them together
 df_final <- inner_join(x = df_macro, y = dict_results_long, by = "doc_id")
 
-saveRDS(df_final, "_SharedFolder_article_vaa_llm_bias/data/data_after_dict_analysis.rds")
+saveRDS(df_final, "data/data_after_dict_analysis.rds")
