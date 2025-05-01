@@ -1,0 +1,141 @@
+---
+format: pdf
+---
+
+Dear Mr. Bouillon:
+
+Manuscript ID SSCR-24-0628.R
+1 entitled "Prompting the Machine: Introducing a LLM Data Extraction Method for Social Scientists" which you submitted to Social Science Computer Review, has been reviewed. 
+The comments of the reviewer(s) are included at the bottom of this letter.
+
+The reviewer(s) have recommended publication, but also suggest some minor revisions to your manuscript. 
+Therefore, I invite you to respond to the reviewer(s)' comments and revise your manuscript. 
+Please highlight the changes in bold or colored text so that they manuscript can be reviewed internally. 
+
+To revise your manuscript, log into https://mc.manuscriptcentral.com/sscr and enter your Author Center, where you will find your manuscript title listed under "Manuscripts with Decisions."  Under "Actions," click on "Create a Revision."  
+Your manuscript number has been appended to denote a revision.
+
+You may also click the below link to start the revision process (or continue the process if you have already started your revision) for your manuscript. If you use the below link you will not be required to login to ScholarOne Manuscripts.
+
+*** PLEASE NOTE: This is a two-step process. After clicking on the link, you will be directed to a webpage to confirm. *** 
+
+https://mc.manuscriptcentral.com/sscr?URL_MASK=a6ef9a87727e465ebe72765ab9bdf373
+
+You will be unable to make your revisions on the originally submitted version of the manuscript. 
+Instead, revise your manuscript using a word processing program and save it on your computer. 
+Please also highlight the changes to your manuscript within the document by using bold or colored text.
+
+Once the revised manuscript is prepared, you can upload it and submit it through your Author Center.
+
+When submitting your revised manuscript, you will be able to respond to the comments made by the reviewer(s) in the space provided. 
+You can use this space to document any changes you make to the original manuscript. 
+In order to expedite the processing of the revised manuscript, please be as specific as possible in your response to the reviewer(s).
+
+IMPORTANT:  Your original files are available to you when you upload your revised manuscript. 
+Please delete any redundant files before completing the submission.
+
+Because we are trying to facilitate timely publication of manuscripts submitted to Social Science Computer Review, your revised manuscript should be uploaded as soon as possible. 
+If it is not possible for you to submit your revision in a reasonable amount of time, we may have to consider your paper as a new submission.
+
+Once again, thank you for submitting your manuscript to Social Science Computer Review and I look forward to receiving your revision.
+
+Sincerely,
+Dr. Deana Rohlinger
+Social Science Computer Review
+deana.rohlinger@fsu.edu, deana.rohlinger@fsu.edu
+
+
+Reviewer(s)' Comments to Author:
+
+Reviewer: 1
+
+Comments to the Author
+This methodological note presents a cogent and well-structured discussion of an LLM-based data extraction method for social scientists. 
+The revisions in this second round have immensely improved the clarity of the study and thus highlighted the contribution of it, which I believe will make it highly accessible and useful to many researchers in the field. 
+The abstract sets the scene effectively and the overall aim of the paper is now clear from the outset. 
+Most of my previous concerns have been comprehensively addressed or further discussed, leaving only minor comments for further consideration.
+
+Introduction
+
+The introduction has been substantially improved, particularly in terms of clarifying the research gap and the intended contribution. 
+This makes it much clearer how this methodological note will benefit researchers, especially those less familiar with LLM applications. 
+The framing is now much stronger and sets the stage well for the discussion that follows.
+
+Generating the Dataset
+
+One small point I would like to see addressed is a brief but explicit acknowledgement that GPT-based models can make mistakes - something that should be clear to all researchers, and I am sure is clear to you. 
+However, I would consider this particularly relevant in the context of the examples given on page 6. 
+While I understand that this does not invalidate the approach, it would be beneficial to highlight this limitation, particularly as the authors propose this as a potential method for researchers who may not have technical expertise. 
+Making this explicit could help to set appropriate expectations and encourage researchers to use the method critically.
+
+While I agree that validation of this standardised approach is not the primary aim of this note, and the removal of the substantive findings from the example alleviates some concerns, the inclusion of phrases such as "to the best of their knowledge" remains an area that could use more discussion. 
+What do researchers gain by extracting responses that would otherwise be rejected due to limited information? This is a validation challenge, and if the authors propose to include such phrases, they should highlight the implications so that researchers can make informed decisions.
+
+Managing the Output
+
+The authors have done a good job of addressing concerns about error and bias within the scope of the study. 
+However, I suggest adding a brief discussion of the potential for systematic bias due to missing values. 
+While an analysis of bias may be beyond the scope of this paper, it would be valuable to acknowledge that missing values may introduce systematic error. 
+As the proposed method specifically allows researchers to identify and manage such biases, it would be helpful to emphasise this point explicitly.
+
+Discussion
+
+The discussion effectively ties back to the introduction and clearly reinforces the study's key messages. This section is well-structured and compelling.
+
+One aspect that could be strengthened is the emphasis on reproducibility and transparency. 
+A short note on which aspects of the data generation process should be published to ensure transparency would be useful. 
+In addition, recent literature (e.g. Barrie, Palmer & Spirling: "Replication for Language Models: Problems, Principles, and Best Practices for Political Science") highlights the current challenges of replicating studies involving LLMs. 
+While the authors do not claim that their method is foolproof, a brief reminder of the importance of standardisation in assessing variability would enrich the discussion. 
+Given that the introduction already highlights how standardisation facilitates assessment, revisiting this point in the discussion would strengthen the study's contribution to transparency in LLM-based research.
+
+Conclusion
+
+Overall, this methodological note presents a well-thought-out approach to LLM-based data extraction for social scientists. 
+The improvements made in this revision have greatly enhanced its clarity and usefulness. 
+The discussion is well-structured, and the proposed method, along with the provided R package, will undoubtedly be valuable to many researchers. 
+With the minor adjustments suggested above, the paper will further strengthen its contribution to the field and I am looking forward to seeing it published. 
+
+Reviewer: 2
+
+Comments to the Author
+
+Thank you for your re-submission. 
+My comments to the first version were limited as I considered this a small methodological note, and what I read there was sufficient as a first step toward some more ambitious work. 
+That was my understanding of the submission.
+
+I can see (also as per the editor comments) that reviewer 1 saw this as a full paper, and then several changes were requested in particular about clarifying aspects relating to models, bias, and the procedure. 
+I did not see the issue of e.g. bias as that relevant, mostly because every time we publish on using LLMs we are forced to comment on bias and hallucinations, and this becomes trite and should be rather devoted to tailored/specific papers on i.e. LLMs bias more than on other substantive or methodological work.
+
+Anyway, the changes that I saw do appear well thought, and they certainly add some clarity, even though, to an extent they make the submission much heavier to read, than a leaner methodological note, which I liked in the first place. 
+
+To an extent I understand now the refocusing of the material too, as per the comments received from reviewer 1. 
+Albeit I do not contend the choice of the refocus, I think the problem of VAAs was almost more intriguing. 
+I can see people going on e.g. chatGPT and ask recommendations for voting, and exploring this as a political science problem seemed to me perhaps the most compelling idea. 
+So now the focus is not so much about how people will get voting advice, but rather about what is inside LLMs about politics and to extract it as data.
+
+Given the refocus I am only asking for you to make footnote 2 part of the text. 
+I think that is a crucial piece of information (ie the availability of the script for others) now for the new focus.
+
+Associate Editor(s)' Comments to Author:
+
+Associate Editor: Rohlinger, Deana
+Comments to the Author:
+(There are no comments.)
+
+
+Notes:
+
+2. Qu'est-ce qu'on gagne à demander "To the best of their knowledge" ? Pourquoi ne pas laisser le LLM nous dire qu'il ne sait pas ?
+    - Avoir des données complètes.
+    - <Demander à claude>
+3. Ajouter une discussion sur le biais systématique dû aux valeurs manquantes.
+    - Les valeurs manquantes peuvent introduire une erreur systématique.
+
+
+4. Quoi publier pour assurer la transparence ?
+    - Code, prompt, modèles et paramètres.
+
+
+
+1. Reconnaissance explicite que les modèles GPT peuvent faire des erreurs (Insérer à la page 6)
+5. Faire que la note de bas de page 2 fasse partie du texte.

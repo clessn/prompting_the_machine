@@ -68,7 +68,7 @@ for (model_name in models) {
       # - In this case, you should add an additional list to the messages list 
       # - containing the example.
       
-      user_command <- "Provide a list of 10 key characteristics describing Quebec MNA or Canada MP John Doe's policies formatted in JSON. Make sure to output 10 characteristics. Please answer to the best of your knowledge.Take a deep breath and work on this problem step by step."
+      user_command <- "Provide a list of 10 key characteristics describing Quebec MNA or Canada MP John Doe's policies formatted in JSON. Make sure to output 10 characteristics. Please answer to the best of your knowledge. Take a deep breath and work on this problem step by step."
       
       # - Here is an example of the expected output. It is important to provide 
       # - the expected output in the same format as the model output. In this 
@@ -93,7 +93,7 @@ for (model_name in models) {
                              list("role" = "system", "content" = system_example),    
                              list("role" = "user", "content" = prompt))
 
-      # - Use the openai package to prompt the model with the messages and store
+      # - use the openai package to prompt the model with the messages and store
       # - the output in a chat_prompt object.
 
       chat_prompt <- openai::create_chat_completion(
